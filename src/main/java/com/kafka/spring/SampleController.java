@@ -20,7 +20,7 @@ public class SampleController {
     @ResponseBody
     public String sendSampleMessage() {
 		String key=String.valueOf(keyGenerator.nextInt(500));
-		String payload="Test Message from kafka test producer:"+key;
+		String payload="Message from kafka test producer:"+key;
 		producer.sendMessage("test",key, payload);
         return "sent to test topic, payload:"+payload;
     }
